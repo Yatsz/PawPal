@@ -108,7 +108,6 @@ const App = () => {
       if (
         i !== lines.length - 1 &&                 // not the last line
         !currentLine.startsWith("Day") &&         // doesn't start with "Day"
-        i % 2 === 0 && 
         currentLine !== ""
       ) {
         result.push("• " + currentLine); // Add bullet point
