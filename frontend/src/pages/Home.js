@@ -171,7 +171,7 @@ const Home = () => {
           <span style={{ fontWeight: "600" }}>Don't</span>
           <span style={{ fontFamily: "Montserrat" }}>{` `}</span>
         </span>
-        <span style={{ fontFamily: "'Baloo Tamma'", color: "#8c4e21" }}>
+        <span style={{ fontFamily: "'Baloo Tamma 2'", color: "#8c4e21" }}>
           'trip'
         </span>
         <span>
@@ -182,7 +182,7 @@ const Home = () => {
       </h3>
       <Button
         style={{ position: "absolute", top: "589px", left: "93px" }}
-        sx={{ width: 236, height:55 }}
+        sx={{ width: 236, height:55, fontFamily: 'Montserrat', fontWeight: 700, fontSize:'20px' }}
         color="secondary"
         variant="contained"
         onClick={handleButtonClick}
@@ -245,9 +245,9 @@ const Home = () => {
           position: "absolute",
           top: "1073px",
           left: "372px",
-          fontSize: "48px",
-          fontWeight: "400",
-          fontFamily: "'Baloo Tamma'",
+          fontSize: "52px",
+          fontWeight: "800",
+          fontFamily: "'Baloo Tamma 2'",
           color: "#8c4e21",
         }}
       >{`SOME OF OUR TOP ITINERARIES `}</h1>
@@ -265,7 +265,7 @@ const Home = () => {
         style={{
           position: "absolute",
           top: "3730px",
-          left: "430px",
+          left: "573px",
           fontWeight: "600",
           color: "#efb68d",
         }}
@@ -311,8 +311,8 @@ const Home = () => {
           top: "493px",
           left: "93px",
           fontSize: "46px",
-          fontWeight: "400",
-          fontFamily: "'Baloo Tamma'",
+          fontWeight: "800",
+          fontFamily: "'Baloo Tamma 2'",
           color: "#8c4e21",
         }}
       >
@@ -547,7 +547,7 @@ const Home = () => {
         style={{
           position: "absolute",
           top: "3880px",
-          left: "582px",
+          left: "572px",
           fontSize: "20px",
           fontWeight: "500",
           color: "#bfd0ce",
@@ -557,7 +557,7 @@ const Home = () => {
         style={{
           position: "absolute",
           top: "3797px",
-          left: "768px",
+          left: "798px",
           width: "61px",
           height: "61px",
           objectFit: "cover",
@@ -569,7 +569,7 @@ const Home = () => {
         style={{
           position: "absolute",
           top: "3797px",
-          left: "682px",
+          left: "713px",
           width: "61px",
           height: "61px",
           objectFit: "cover",
@@ -581,7 +581,7 @@ const Home = () => {
         style={{
           position: "absolute",
           top: "3797px",
-          left: "854px",
+          left: "884px",
           width: "61px",
           height: "61px",
           objectFit: "cover",
@@ -593,7 +593,7 @@ const Home = () => {
         style={{
           position: "absolute",
           top: "3797px",
-          left: "596px",
+          left: "626px",
           width: "61px",
           height: "61px",
           objectFit: "cover",
@@ -605,7 +605,7 @@ const Home = () => {
         style={{
           position: "absolute",
           top: "358.56px",
-          left: "1107.1px",
+          left: "1112px",
           width: "85.42px",
           height: "80.36px",
           objectFit: "cover",
@@ -689,7 +689,7 @@ const Home = () => {
         style={{
           position: "absolute",
           top: "406px",
-          left: "802px",
+          left: "790px",
           fontSize: "22px",
           fontWeight: "600",
           color: "#63857a",

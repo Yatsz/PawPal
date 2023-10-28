@@ -226,8 +226,8 @@ const App = () => {
           value={formData.age}
         />
         <Button
-          style={{ position: "absolute", top: "2428px", left: "735px" }}
-          sx={{ width: 400, height: 90 }}
+          style={{ position: "absolute", top: "882px", left: "147px" }}
+          sx={{ width: 464, height: 60, fontFamily: 'Montserrat', fontWeight: 600, fontSize:'28px'}}
           color="primary"
           variant="contained"
           label="Let's Go!"
@@ -244,8 +244,8 @@ const App = () => {
           top: "180px",
           left: "147px",
           fontSize: "64px",
-          fontWeight: "400",
-          fontFamily: "'Baloo Tamma'",
+          fontWeight: "800",
+          fontFamily: "'Baloo Tamma 2'",
           color: "#63857a",
         }}
       >{`ADVENTURE TIME! `}</h1>
@@ -253,11 +253,11 @@ const App = () => {
         style={{
           margin: "0",
           position: "absolute",
-          top: "1010px",
-          left: "147px",
+          top: "1088px",
+          left: "170px",
           fontSize: "64px",
-          fontWeight: "400",
-          fontFamily: "'Baloo Tamma'",
+          fontWeight: "800",
+          fontFamily: "'Baloo Tamma 2'",
           color: "#63857a",
         }}
       >
@@ -292,8 +292,8 @@ const App = () => {
   <section
   style={{
     position: "absolute",
-    top: "1168.2px",
-    left: "95px",
+    top: "1222px",
+    left: "147px",
     borderRadius: "30px",
     backgroundColor: "#ebddd3",
     border: "3px solid #b88865",
