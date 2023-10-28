@@ -132,7 +132,7 @@ const Home = () => {
       <div
         style={{
           position: "absolute",
-          top: "246px",
+          top: "186px",
           left: "840px",
           borderRadius: "25px",
           backgroundColor: "#63857a",
@@ -157,7 +157,7 @@ const Home = () => {
         style={{
           margin: "0",
           position: "absolute",
-          top: "455px",
+          top: "395px",
           left: "93px",
           fontSize: "36px",
           display: "inline-block",
@@ -181,7 +181,7 @@ const Home = () => {
         </span>
       </h3>
       <Button
-        style={{ position: "absolute", top: "589px", left: "93px" }}
+        style={{ position: "absolute", top: "529px", left: "93px" }}
         sx={{ width: 236, height:55, fontFamily: 'Montserrat', fontWeight: 700, fontSize:'20px' }}
         color="secondary"
         variant="contained"
@@ -308,7 +308,7 @@ const Home = () => {
         style={{
           margin: "0",
           position: "absolute",
-          top: "493px",
+          top: "433px",
           left: "93px",
           fontSize: "46px",
           fontWeight: "800",
@@ -604,7 +604,7 @@ const Home = () => {
       <img
         style={{
           position: "absolute",
-          top: "358.56px",
+          top: "260.56px",
           left: "1112px",
           width: "85.42px",
           height: "80.36px",
@@ -616,7 +616,7 @@ const Home = () => {
       <img
         style={{
           position: "absolute",
-          top: "325.61px",
+          top: "225.61px",
           left: "1059.78px",
           width: "170.15px",
           height: "131.25px",
@@ -628,7 +628,7 @@ const Home = () => {
       <img
         style={{
           position: "absolute",
-          top: "341px",
+          top: "281px",
           left: "1080px",
           width: "452px",
           height: "480px",
@@ -664,7 +664,7 @@ const Home = () => {
       <img
         style={{
           position: "absolute",
-          top: "545px",
+          top: "484px",
           left: "909px",
           width: "248px",
           height: "276px",
@@ -676,7 +676,7 @@ const Home = () => {
       <img
         style={{
           position: "absolute",
-          top: "361px",
+          top: "285px",
           left: "769px",
           width: "221px",
           height: "162px",
@@ -688,7 +688,7 @@ const Home = () => {
       <div
         style={{
           position: "absolute",
-          top: "406px",
+          top: "326px",
           left: "790px",
           fontSize: "22px",
           fontWeight: "600",
