@@ -7,6 +7,7 @@ import models
 from fastapi.middleware.cors import CORSMiddleware
 import config
 import openai
+
 openai.api_key = config.API_key
 
 app = FastAPI()
