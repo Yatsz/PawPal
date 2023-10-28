@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import api from "./api";
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
-import { TextareaAutosize } from '@mui/base/TextareaAutosize';
+
+import { TextField, Button } from "@mui/material";
+
+import imgOne from "./img1.png";
 
 const App = () => {
   const [plan, setPlan] = useState([]);
@@ -30,17 +30,16 @@ const App = () => {
   useEffect(() => {
     let count = 0;
     if (isLoading) {
-        const interval = setInterval(() => {
-            count += 1;
-            setLoadingMessage(`Loading for ${count} seconds...`);
-        }, 1000);
+      const interval = setInterval(() => {
+        count += 1;
+        setLoadingMessage(`Loading for ${count} seconds...`);
+      }, 1000);
 
-        return () => clearInterval(interval);
+      return () => clearInterval(interval);
     } else {
-        setLoadingMessage("");
+      setLoadingMessage("");
     }
-}, [isLoading]);
-
+  }, [isLoading]);
 
   const handleInputChange = (event) => {
     const value =
@@ -61,157 +60,247 @@ const App = () => {
 
     // Check if the post to /plan/ was successful
     if (response.status === 200) {
-        // Fetch the most recent plan
-        fetchPlan();
+      // Fetch the most recent plan
+      fetchPlan();
 
-        // Now, call the generate_itinerary endpoint to get the itinerary
-        const itineraryResponse = await api.post("/generate_itinerary/");
-        if (itineraryResponse.status === 200) {
-            // Set the itinerary state with the received data
-            setItinerary(itineraryResponse.data.itinerary);
-        } else {
-            console.error("Failed to generate itinerary");
-        }
+      // Now, call the generate_itinerary endpoint to get the itinerary
+      const itineraryResponse = await api.post("/generate_itinerary/");
+      if (itineraryResponse.status === 200) {
+        // Set the itinerary state with the received data
+        setItinerary(itineraryResponse.data.itinerary);
+      } else {
+        console.error("Failed to generate itinerary");
+      }
     } else {
-        console.error("Failed to post plan");
+      console.error("Failed to post plan");
     }
 
     // Reset the form
     setFormData({
-        location: "",
-        duration: "",
-        interests: "",
-        age: "",
+      location: "",
+      duration: "",
+      interests: "",
+      age: "",
     });
     setIsLoading(false);
-};
+  };
+
+  function formatItinerary(itinerary) {
+    const lines = itinerary.split("\n"); // Split by line breaks
+    let result = [];
+  
+    for (let i = 0; i < lines.length; i++) {
+      let currentLine = lines[i].trim();
+      if (
+        i !== 0 &&                                // not the first line
+        i !== lines.length - 1 &&                 // not the last line
+        !currentLine.startsWith("Day") &&         // doesn't start with "Day"
+        i % 2 === 0 && 
+        currentLine !== ""
+      ) {
+        result.push("• " + currentLine); // Add bullet point
+      } else {
+        result.push(currentLine);
+      }
+    }
+  
+    return result.join("\n"); // Join back into a string
+  }
+  
+
+  const formattedItinerary = formatItinerary(itinerary);
 
 
   return (
-    <div>
-      <nav className="navbar navbar-dark bg-primary">
-        <div className="container-fluid">
-          <a className="navbar-brand" href="#">
-            Trip Planning App
-          </a>
-        </div>
-      </nav>
-      <div className="container">
-        <form onSubmit={handleFormSubmit}>
-          <div className="mb-3 mt-3">
-          <Box
-            component="form"
-            sx={{
-              "& > :not(style)": { m: 1, width: "25ch" },
-            }}
-            noValidate
-            autoComplete="off"
-          >
-            <TextField
-            type="text"
-              id="location"
-              label="Location"
-              name="location"
-              onChange={handleInputChange}
-              value={formData.location}
-            />
-          </Box>
-          </div>
-          
-          <div className="mb-3">
-          <Box
-            component="form"
-            sx={{
-              "& > :not(style)": { m: 1, width: "25ch" },
-            }}
-            noValidate
-            autoComplete="off"
-          >
-            <TextField
-            type="text"
-              id="duration"
-              label="Duration"
-              name="duration"
-              onChange={handleInputChange}
-              value={formData.duration}
-            />
-          </Box>
-          </div>
-          <div className="mb-3">
-          <Box
-            component="form"
-            sx={{
-              "& > :not(style)": { m: 1, width: "25ch" },
-            }}
-            noValidate
-            autoComplete="off"
-          >
-            <TextField
-            type="text"
-              id="interests"
-              label="Interests"
-              name="interests"
-              onChange={handleInputChange}
-              value={formData.interests}
-            />
-          </Box>
-          </div>
-          <div className="mb-3">
-          <Box
-            component="form"
-            sx={{
-              "& > :not(style)": { m: 1, width: "25ch" },
-            }}
-            noValidate
-            autoComplete="off"
-          >
-            <TextField
-            type="text"
-              id="age"
-              label="Age"
-              name="age"
-              onChange={handleInputChange}
-              value={formData.age}
-            />
-          </Box>
-          </div>
+    <div
+      style={{
+        position: "relative",
+        borderRadius: "25px",
+        backgroundColor: "#f6ece5",
+        width: "100%",
+        height: "2724px",
+        overflow: "hidden",
+        textAlign: "left",
+        fontSize: "24px",
+        color: "rgba(184, 136, 101, 0.8)",
+        fontFamily: "Montserrat",
+      }}
+    >
+      <div
+        style={{
+          position: "absolute",
+          top: "46px",
+          left: "45px",
+          borderRadius: "20px",
+          backgroundColor: "#63857a",
+          width: "63px",
+          height: "63px",
+        }}
+      />
+      <form onSubmit={handleFormSubmit}>
+        <TextField
+          style={{
+            border: "none",
+            backgroundColor: "transparent",
+            position: "absolute",
+            top: "358px",
+            left: "147px",
+          }}
+          type="text"
+          id="location"
+          name="location"
+          label="Location"
+          color="primary"
+          sx={{ width: 464 }}
+          variant="outlined"
+          onChange={handleInputChange}
+          value={formData.location}
+        />
+        <TextField
+          style={{
+            border: "none",
+            backgroundColor: "transparent",
+            position: "absolute",
+            top: "483px",
+            left: "147px",
+          }}
+          type="text"
+          id="duration"
+          name="duration"
+          label="Duration"
+          color="primary"
+          sx={{ width: 464 }}
+          variant="outlined"
+          onChange={handleInputChange}
+          value={formData.duration}
+        />
+        <TextField
+          style={{
+            border: "none",
+            backgroundColor: "transparent",
+            position: "absolute",
+            top: "608px",
+            left: "147px",
+          }}
+          type="text"
+          id="interests"
+          name="interests"
+          label="Interests"
+          color="primary"
+          sx={{ width: 464 }}
+          variant="outlined"
+          onChange={handleInputChange}
+          value={formData.interests}
+        />
+        <TextField
+          style={{
+            border: "none",
+            backgroundColor: "transparent",
+            position: "absolute",
+            top: "733px",
+            left: "147px",
+          }}
+          type="text"
+          id="age"
+          name="age"
+          label="Age"
+          color="primary"
+          sx={{ width: 464 }}
+          variant="outlined"
+          onChange={handleInputChange}
+          value={formData.age}
+        />
+        <Button
+          style={{ position: "absolute", top: "2428px", left: "735px" }}
+          sx={{ width: 400, height: 90 }}
+          color="primary"
+          variant="contained"
+          label="Let's Go!"
+          type="submit"
+        >
+          Let's Go!
+        </Button>
+      </form>
 
-          <Button variant="outlined" type="submit">
-            Make Plan
-          </Button>
-        </form>
-        <br></br>
-        
+      <h1
+        style={{
+          margin: "0",
+          position: "absolute",
+          top: "180px",
+          left: "147px",
+          fontSize: "64px",
+          fontWeight: "400",
+          fontFamily: "'Baloo Tamma'",
+          color: "#63857a",
+        }}
+      >{`ADVENTURE TIME! `}</h1>
+      <h1
+        style={{
+          margin: "0",
+          position: "absolute",
+          top: "1010px",
+          left: "147px",
+          fontSize: "64px",
+          fontWeight: "400",
+          fontFamily: "'Baloo Tamma'",
+          color: "#63857a",
+        }}
+      >
+        Time to TAKE OFF
+      </h1>
+      <div
+        style={{
+          position: "absolute",
+          top: "261px",
+          left: "147px",
+          fontWeight: "500",
+          color: "rgba(99, 133, 122, 0.8)",
+          display: "inline-block",
+          width: "586px",
+        }}
+      >
+        Fill in these text bubbles and we will craft your trip
       </div>
-      <div>
-        <TextareaAutosize value={itinerary} readOnly />
-      </div>
-      <div>{loadingMessage}</div>
+      <img
+        style={{
+          position: "absolute",
+          top: "300px",
+          left: "733px",
+          width: "613px",
+          height: "553px",
+          objectFit: "cover",
+        }}
+        alt=""
+        src={imgOne}
+      />
+      
+  <section
+  style={{
+    position: "absolute",
+    top: "1168.2px",
+    left: "95px",
+    borderRadius: "30px",
+    backgroundColor: "#ebddd3",
+    border: "3px solid #b88865",
+    boxSizing: "border-box",
+    width: "1040px",
+    height: "1160px",  // Set a fixed height so overflow can occur
+    transformOrigin: "0 0",
+    padding: "50px",
+    whiteSpace: 'pre-line',
+    overflowY: 'auto'  // Only allow vertical scrolling
+  }}
+>
+  {formattedItinerary}
+</section>
 
+
+
+      <div style={{ position: "absolute", top: "2428px", left: "200px" }}>
+        {loadingMessage}
+      </div>
     </div>
   );
 };
-/*
-<table className="table table-striped table-bordered table-hover">
-          <thead>
-            <tr>
-              <th>Location</th>
-              <th>Duration</th>
-              <th>Interests</th>
-              <th>Age</th>
-            </tr>
-          </thead>
-          <tbody>
-            {plan.map((plan) => (
-              <tr key={plan.id}>
-                <td>{plan.location}</td>
-                <td>{plan.duration}</td>
-                <td>{plan.interests}</td>
-                <td>{plan.age}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-*/
-export default App;
 
+export default App;
