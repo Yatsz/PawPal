@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import api from "../api";
-
 import { TextField, Button } from "@mui/material";
 
 import imgOne from "../img1.png";
@@ -181,7 +180,7 @@ const App = () => {
           type="text"
           id="duration"
           name="duration"
-          label="Duration"
+          label="Duration (Days)"
           color="primary"
           sx={{ width: 464 }}
           variant="outlined"
@@ -199,7 +198,7 @@ const App = () => {
           type="text"
           id="interests"
           name="interests"
-          label="Interests"
+          label="Intent of Trip (i.e. Relax, Party)"
           color="primary"
           sx={{ width: 464 }}
           variant="outlined"
@@ -310,7 +309,7 @@ const App = () => {
 
 
 
-      <div style={{ position: "absolute", top: "2428px", left: "200px" }}>
+      <div style={{ position: "absolute", top: "1105px", left: "850px" }}>
         {loadingMessage}
       </div>
       <img
