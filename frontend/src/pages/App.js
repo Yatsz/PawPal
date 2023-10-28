@@ -1,10 +1,24 @@
 import React, { useState, useEffect } from "react";
-import api from "./api";
+import api from "../api";
 
 import { TextField, Button } from "@mui/material";
 
-import imgOne from "./img1.png";
+import imgOne from "../img1.png";
+import imgTwentytwo from "../Images/dogPawOne.png";
+import { createTheme } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles';
 
+
+const customTheme = createTheme({
+  palette: {
+    primary: {
+      main: '#B88865',
+    },
+    secondary: {
+      main: '#f6ece5',
+    },
+  },
+});
 const App = () => {
   const [plan, setPlan] = useState([]);
   const [itinerary, setItinerary] = useState("");
@@ -92,7 +106,6 @@ const App = () => {
     for (let i = 0; i < lines.length; i++) {
       let currentLine = lines[i].trim();
       if (
-        i !== 0 &&                                // not the first line
         i !== lines.length - 1 &&                 // not the last line
         !currentLine.startsWith("Day") &&         // doesn't start with "Day"
         i % 2 === 0 && 
@@ -112,6 +125,7 @@ const App = () => {
 
 
   return (
+    <ThemeProvider theme={customTheme}>
     <div
       style={{
         position: "relative",
@@ -130,13 +144,14 @@ const App = () => {
         style={{
           position: "absolute",
           top: "46px",
-          left: "45px",
+          left: "46px",
           borderRadius: "20px",
           backgroundColor: "#63857a",
           width: "63px",
           height: "63px",
         }}
       />
+      
       <form onSubmit={handleFormSubmit}>
         <TextField
           style={{
@@ -299,7 +314,20 @@ const App = () => {
       <div style={{ position: "absolute", top: "2428px", left: "200px" }}>
         {loadingMessage}
       </div>
+      <img
+        style={{
+          position: "absolute",
+          top: "52px",
+          left: "51px",
+          width: "52px",
+          height: "52px",
+          objectFit: "cover",
+        }}
+        alt=""
+        src={imgTwentytwo}
+      />
     </div>
+    </ThemeProvider>
   );
 };
 
