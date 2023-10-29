@@ -275,7 +275,7 @@ const App = () => {
           fontWeight: "500",
           color: "rgba(99, 133, 122, 0.8)",
           display: "inline-block",
-          width: "586px",
+          width: "700px",
         }}
       >
         Fill in these text bubbles and we will craft your trip
