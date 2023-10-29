@@ -83,7 +83,7 @@ const TAHOE = () => {
         <section
           style={{
             position: "absolute",
-            top: "2140px",
+            top: "2340px",
             left: "121px",
             borderRadius: "30px",
             backgroundColor: "#ebddd3",
@@ -210,7 +210,7 @@ const TAHOE = () => {
         <section
           style={{
             position: "absolute",
-            top: "2260px",
+            top: "2460px",
             left: "170px",
             fontSize: "32px",
             color: "#b88865",
@@ -310,7 +310,7 @@ const TAHOE = () => {
         <div
           style={{
             position: "absolute",
-            top: "2179px",
+            top: "2379px",
             left: "170px",
             fontSize: "40px",
             fontFamily: "'Baloo Tamma 2'",
