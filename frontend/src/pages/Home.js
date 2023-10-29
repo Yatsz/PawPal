@@ -277,22 +277,20 @@ const Home = () => {
         }}
       />
       <div
-        style={{
-          position: "absolute",
-          top: "3730px",
-          left: "573px",
-          fontWeight: "600",
-          color: "#efb68d",
-        }}
-      >
-        <span style={{ textDecoration: "underline" }}>home</span>
-        {`            `}
-        <span style={{ textDecoration: "underline" }}>plan trip</span>
-        {`            `}
-        <span style={{ textDecoration: "underline" }}>top itineraries</span>
-        {`             `}
-        <span style={{ textDecoration: "underline" }}>login</span>
-      </div>
+  style={{
+    position: "absolute",
+    top: "3730px",
+    left: "530px",
+    fontWeight: "600",
+    color: "#efb68d",
+  }}
+>
+  <span style={{ textDecoration: "underline", marginRight: "30px" }}>home</span>
+  <span style={{ textDecoration: "underline", marginRight: "30px" }}>plan trip</span>
+  <span style={{ textDecoration: "underline", marginRight: "30px" }}>top itineraries</span>
+  <span style={{ textDecoration: "underline" }}>login</span>
+</div>
+
       
       <h3
         style={{
@@ -568,7 +566,7 @@ const Home = () => {
         style={{
           position: "absolute",
           top: "3880px",
-          left: "572px",
+          left: "568px",
           fontSize: "20px",
           fontWeight: "500",
           color: "#bfd0ce",
