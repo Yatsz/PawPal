@@ -50,6 +50,18 @@ const Home = () => {
   const handleButtonClick = () => {
     navigate('/app');
   }
+  const handleButtonClickTwo = () => {
+    navigate('/home');
+  }
+  const handleButtonClickThree = () => {
+    navigate('/palm');
+  }
+  const handleButtonClickFour = () => {
+    navigate('/tahoe');
+  }
+  const handleButtonClickFive = () => {
+    navigate('/hawaii');
+  }
 
   return (
     <ThemeProvider theme={customTheme}>
@@ -199,6 +211,7 @@ const Home = () => {
           width: "383px",
           height: "389px",
         }}
+        onClick={handleButtonClickFour}
       />
       <img
         style={{
@@ -210,6 +223,7 @@ const Home = () => {
           height: "468.14px",
         }}
         alt=""
+        onClick={handleButtonClickFive}
         src={imgFifteen}
       />
       <div
@@ -224,6 +238,7 @@ const Home = () => {
           transform: " rotate(9.24deg)",
           transformOrigin: "0 0",
         }}
+        onClick={handleButtonClickThree}
       />
       <h3
         style={{
@@ -329,6 +344,7 @@ const Home = () => {
         }}
         alt=""
         src={imgEleven}
+        onClick={handleButtonClickFour}
       />
       <img
         style={{
@@ -340,6 +356,7 @@ const Home = () => {
           objectFit: "cover",
         }}
         alt=""
+        onClick={handleButtonClickThree}
         src={imgSix}
       />
       <img
@@ -352,6 +369,7 @@ const Home = () => {
           objectFit: "cover",
         }}
         alt=""
+        onClick={handleButtonClickFive}
         src={imgTwo}
       />
       <img
@@ -455,6 +473,7 @@ const Home = () => {
           width: "307px",
           height: "119px",
         }}
+        onClick={handleButtonClickFour}
       >
         tahoe
       </h1>
@@ -473,6 +492,7 @@ const Home = () => {
           transform: " rotate(9.25deg)",
           transformOrigin: "0 0",
         }}
+        onClick={handleButtonClickThree}
       >
         palm springs
       </h2>
@@ -489,6 +509,7 @@ const Home = () => {
           width: "171px",
           height: "60px",
         }}
+        onClick={handleButtonClickFive}
       >
         hawaii
       </h1>
@@ -725,12 +746,13 @@ const Home = () => {
         style={{
           position: "absolute",
           top: "52px",
-          left: "51px",
+          left: "52px",
           width: "52px",
           height: "52px",
           objectFit: "cover",
         }}
         alt=""
+        onClick={handleButtonClickTwo}
         src={imgTwentytwo}
       />
     </div>

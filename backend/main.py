@@ -7,6 +7,8 @@ import models
 from fastapi.middleware.cors import CORSMiddleware
 import config
 import openai
+from fastapi.responses import StreamingResponse
+import asyncio
 
 openai.api_key = config.API_key
 

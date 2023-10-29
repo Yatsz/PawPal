@@ -7,6 +7,9 @@ import imgTwentytwo from "../Images/dogPawOne.png";
 import { createTheme } from '@mui/material/styles';
 import { ThemeProvider } from '@mui/material/styles';
 
+import { useNavigate } from 'react-router-dom';
+
+
 
 const customTheme = createTheme({
   palette: {
@@ -120,7 +123,10 @@ const App = () => {
   
 
   const formattedItinerary = formatItinerary(itinerary);
-
+  const navigate = useNavigate();
+  const handleButtonClickTwo = () => {
+    navigate('/home');
+  }
 
   return (
     <ThemeProvider theme={customTheme}>
@@ -316,12 +322,13 @@ const App = () => {
         style={{
           position: "absolute",
           top: "52px",
-          left: "51px",
+          left: "52px",
           width: "52px",
           height: "52px",
           objectFit: "cover",
         }}
         alt=""
+        onClick={handleButtonClickTwo}
         src={imgTwentytwo}
       />
     </div>
