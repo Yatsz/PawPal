@@ -352,17 +352,18 @@ const HAWAII = () => {
             astronomy program.
           </p>
         </section>
-        <img
+        <div
           style={{
             position: "absolute",
-            top: "198.37px",
-            left: "971.39px",
+            top: "214px",
+            left: "980.7px",
             borderRadius: "25px",
+            backgroundColor: "#b88865",
             width: "380px",
             height: "380px",
+            transform: " rotate(0.79deg)",
+            transformOrigin: "0 0",
           }}
-          alt=""
-          src="/rectangle-17.svg"
         />
         <img
           style={{
